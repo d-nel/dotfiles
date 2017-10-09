@@ -7,6 +7,8 @@
 ;; Goodbye awful sound
 (setq ring-bell-function 'ignore)
 
+;; Delete the selection when I start to type
+(delete-selection-mode 1)
 
 ;; Foreign packages
 (when (>= emacs-major-version 24)
@@ -15,9 +17,23 @@
     (add-to-list 'package-archives
 				 '("melpa" . "http://melpa.milkbox.net/packages/") t))
 
+;;
 ;; Backups
-(setq backup-directory-alist `(("." . "d:/Dev/emacsbackup")))
+;;
+
+;; windows dir
+(if (eq system-type 'windows-nt)
+    (setq backup-directory-alist `(("." . "d:/Dev/emacsbackup")))
+)
+
+;; macos dir
+(if (eq system-type 'darwin)
+    (setq backup-directory-alist `(("." . "~/Dev/emacsbackup")))
+)
+
 (setq backup-by-copying t)
+
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
