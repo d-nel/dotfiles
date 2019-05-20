@@ -26,9 +26,13 @@ if has("gui_running")
 	" set background=dark
 	colorscheme onedark " I'd like to find a better theme soon.
 
+	set guioptions -=L
+	
 	if has("gui_macvim")
 		set guifont=Menlo\ Regular:h14
 	elseif has("gui_win32")
-		set guifont=Consolas:h14
+		set guifont=Consolas:h13
+		set guioptions -=T
+		set belloff=all
 	endif
 endif
