@@ -10,6 +10,12 @@
 ;; Delete the selection when I start to type
 (delete-selection-mode 1)
 
+;; Ctrl-C and V, finally!
+(cua-mode t)
+
+;; Set font size to 17 pixels
+(set-face-attribute 'default nil :height 130)
+
 ;; Foreign packages
 (when (>= emacs-major-version 24)
     (require 'package)
@@ -21,13 +27,15 @@
 ;; Backups
 ;;
 
-;; windows dir
+
 (if (eq system-type 'windows-nt)
-    (setq backup-directory-alist `(("." . "d:/Dev/emacsbackup")))
+	;; windows dir
+	(setq backup-directory-alist `(("." . "d:/Dev/emacsbackup")))
 )
 
-;; macos dir
+
 (if (eq system-type 'darwin)
+	;; macos dir
     (setq backup-directory-alist `(("." . "~/Dev/emacsbackup")))
 )
 
