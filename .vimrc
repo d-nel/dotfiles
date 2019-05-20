@@ -1,24 +1,31 @@
 
 call plug#begin()
 Plug 'itchyny/lightline.vim'
-Plug 'scrooloose/nerdtree'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-commentary'
+
+" I'm not sure I'll keep nerdtree. Let's just try it out!
+Plug 'scrooloose/nerdtree'
 
 " Colors
 Plug 'nightsense/cosmic_latte'
+Plug 'joshdick/onedark.vim'
 
 call plug#end()
 
 " lightline requirements
 set laststatus=2
 set noshowmode
-let g:lightline = { 'colorscheme': 'wombat', }
+let g:lightline = { 'colorscheme': 'one', }
 
+set noexpandtab
+set shiftwidth=4
 set tabstop=4
-set background=dark
-colorscheme cosmic_latte
 
 if has("gui_running")
+	" set background=dark
+	colorscheme onedark " I'd like to find a better theme soon.
+
 	if has("gui_macvim")
 		set guifont=Menlo\ Regular:h14
 	elseif has("gui_win32")
