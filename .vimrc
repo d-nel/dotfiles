@@ -40,11 +40,17 @@ set ttimeout
 map <Leader>n :NERDTreeToggle<Enter>
 map <Leader>f :NERDTreeFind<Enter>
 
+if !has("gui_running")
+	set t_Co=256
+	colorscheme everforest
+endif
+
 if has("gui_running")
 	set background=dark
 	colorscheme everforest
 
 	set guioptions -=L
+	set guioptions -=T
 
 	set belloff=all
 	
